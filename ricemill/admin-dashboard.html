@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Sri Seetha Rama Paddy Rice Mill</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Playfair Display', serif;
+            background-color: #4e2c0a; /* Dark brown background color */
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background: url('https://wallpapercave.com/wp/wp3592411.jpg') no-repeat center center/cover;
+            position: relative;
+        }
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Dark overlay for blur effect */
+        }
+        header {
+            background-color: #653411; /* Dark brown header background */
+            text-align: center;
+            color: #0c0b0b;
+            width: 100%;
+            padding: 1em 0;
+            margin-bottom: 1em;
+            position: relative;
+            z-index: 1; /* Ensure header is above the background overlay */
+        }
+        .container {
+            background-color: #fff;
+            padding: 2em;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 800px;
+            margin-top: 1em;
+            z-index: 1; /* Ensure content is above the background overlay */
+        }
+        h1, h2 {
+            color: #a0522d; /* Brownish text color */
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1em;
+            color: #0a0909;
+        }
+        table, th, td {
+            border: 1px solid #0a0909;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        button {
+            background-color: #ffa500; /* Orange button background */
+            color: #fff;
+            padding: 10px 20px;
+            font-size: 1em;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #e69500; /* Darker orange on hover */
+        }
+        footer {
+            background: #8b4513; /* Dark brown footer background */
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        nav {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 10px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 2; /* Ensure navigation bar is above background overlay */
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.2em;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #cac2c2; /* Lighter color on hover */
+        }
+        
+    </style>
+</head>
+<body>
+    <nav>
+        <!-- <a href="Index.html">Home</a> -->
+        <a href="admin-dashboard.html">Admin Dashboard</a>
+        <a href="inbox.html">Inbox</a>
+        <a href="orderdetails.html">Order Details</a>
+        <a href="staffdetails.html">Staff Details</a>
+    </nav>
+    <!-- <header>
+        <h1>Admin Dashboard</h1>
+    </header> -->
+    <div class="container">
+        <h2>Manage Products</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Price(₹ per bag)</th>
+                    <th>Discount (%)</th>
+                    <th>Stock (bags)</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="product-list">
+                <!-- Product rows will be added dynamically here -->
+            </tbody>
+        </table>
+    </div>
+    <footer>
+        &copy; 2024 Sri Seetha Rama Paddy Rice Mill. All Rights Reserved.
+    </footer>
+    <script>
+        // Sample product data
+        const products = [
+            { id: 1, name: 'Sona Masoori Rice', price: 100, discount: 10, stock: 100 },
+            { id: 2, name: 'HMT Rice', price: 120, discount: 10, stock: 50 },
+            { id: 3, name: 'Brown Rice', price: 130, discount: 10, stock: 100 },
+            { id: 4, name: 'Basmati Rice', price: 620, discount: 10, stock: 50 },
+            { id: 5, name: 'Idly Rice', price: 100, discount: 10, stock: 100 },
+            { id: 6, name: 'Nellore Rice', price: 100, discount: 10, stock: 50 },
+            { id: 7, name: 'Black Rice', price: 350, discount: 10, stock: 50 },
+        ];
+        function loadProducts() {
+            const productList = document.getElementById('product-list');
+            productList.innerHTML = '';
+            products.forEach(product => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${product.name}</td>
+                    <td><input type="text" value="${product.price}" id="price-${product.id}"></td>
+                    <td><input type="text" value="${product.discount}" id="discount-${product.id}"></td>
+                    <td><input type="text" value="${product.stock}" id="stock-${product.id}"></td>
+                    <td><button onclick="updateProduct(${product.id})">Update</button></td>
+                `;
+                productList.appendChild(row);
+            });
+        }
+        function updateProduct(productId) {
+            const price = document.getElementById(`price-${productId}`).value;
+            const discount = document.getElementById(`discount-${productId}`).value;
+            const stock = document.getElementById(`stock-${productId}`).value;
+            
+            // Update the product in the array (In a real application, this would involve an API call to update the product in the database)
+            const product = products.find(p => p.id === productId);
+            product.price = price;
+            product.discount = discount;
+            product.stock = stock;
+            
+            alert(`Product ${product.name} updated!`);
+        }
+        window.onload = loadProducts;
+    </script>
+</body>
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sri Seetha Rama Paddy Rice- Products</title>
+    <style>
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://wallpapercave.com/wp/wp3592411.jpg') no-repeat center center/cover;
+            filter: blur(10px); /* Apply blur effect to the background image */
+            z-index: -1; /* Ensure the background stays behind all other content */
+            /* color: white; */
+        }
+        body{
+            color: white;
+            font-size: 20px;
+        }
+        nav {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 10px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 2;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.2em;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #fdf5e6;
+        }
+        header {
+            text-align: center;
+            padding: 1em;
+            background-color: #6c3f11;
+            color: white;
+        }
+        .container {
+            width: 90%;
+            margin: auto;
+            overflow: hidden;
+        }
+        .product {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            margin: 2em 0;
+            padding: 1em 0;
+        }
+        .product:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+        .product img {
+            /* width: 30%; */
+            width: 20%;
+            height: 20%;
+            border-radius: 8px;
+            border: none;
+            border-style: solid;
+        }
+        .product-details {
+            width: 65%;
+            padding: 1em;
+        }
+        .product-details h2 {
+            color: #e7dcd2;
+            font-size: 30px;
+        }
+        .product-details button {
+            background-color: #6c3f11;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .product-details button:hover {
+            background-color: #6c3f11;
+        }
+        footer {
+            text-align: center;
+            padding: 1em;
+            background-color: #6c3f11;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="home.html">Home</a>
+        <a href="products.html">Products</a> 
+        <a href="process.html">Process</a> 
+        <a href="quality.html">Quality Check</a> 
+        <a href="gallery.html">Gallery</a> 
+        <a href="contactdetails.html">Contact</a> 
+        <a href="mycart.html">Cart</a>
+    </nav>
+    <header>
+        <h1>Sri Seetha Rama Paddy Rice Mill - Our Products</h1>
+    </header>
+    <div class="container">
+        <div class="product">
+            <img src="https://tiimg.tistatic.com/fp/1/007/763/farm-fresh-100-pure-a-grade-medium-grain-sona-masoori-rice--028.jpg" alt="Sona Rice">
+            <div class="product-details">
+                <h2>Sona Masoori Rice</h2>
+                <p>Medium grain raw rice sourced from local villages of Andhra Pradesh. Aged up to 6 months before packaging with a rich and unique aroma.</p>
+                <button onclick="window.location.href='product1.html'">Product Details</button>
+                <button onclick="window.location.href='buynow1.html'">ADD TO CART</button>
+            </div>
+        </div>
+        <div class="product">
+            <img src="https://5.imimg.com/data5/SELLER/Default/2023/1/OS/QC/WJ/4383741/organic-hmt-rice-1000x1000.jpg" alt="Quinoa">
+            <div class="product-details">
+                <h2>HMT Rice</h2>
+                <p>This is a high-quality, medium-grain rice variety that is popular in Telangana. It is known for its taste and texture, making it suitable for a variety of dishes.</p>
+                <button onclick="window.location.href='product7.html'">Product Details</button>
+                <button onclick="window.location.href='buynow7.html'">ADD TO CART</button>
+            </div>
+        </div>
+        <div class="product">
+            <img src="https://www.roopmahalrice.com/wp-content/uploads/2023/06/Everything-About-Brown-Rice-by-Roop-mahal-Rice-Brown-Rice-Nutrition-value-and-More.jpg" alt="Brown Rice">
+            <div class="product-details">
+                <h2>Brown Rice</h2>
+                <p>Whole grain rice, rich in magnesium, phosphorus, and antioxidants. Ideal for a healthy diet.</p>
+                <button onclick="window.location.href='product2.html'">Product Details</button>
+                <button onclick="window.location.href='buynow2.html'">ADD TO CART</button>
+            </div>
+        </div>
+        <div class="product">
+            <img src="https://miro.medium.com/v2/resize:fit:550/1*qvItJ5D3uJzxFwgJFxnYww.jpeg" alt="Basmati Rice">
+            <div class="product-details">
+                <h2>Basmati Rice</h2>
+                <p>Long grain aromatic rice traditionally from the Indian subcontinent. Known for its distinct fragrance and flavor.</p>
+                <button onclick="window.location.href='product3.html'">Product Details</button>
+                <button onclick="window.location.href='buynow3.html'">ADD TO CART</button>
+            </div>
+        </div>
+        <div class="product">
+            <img src="https://www.naatigrains.com/image/cache/catalog/naatigrains-products/NG211/idly-rice-naturally-grown-carbo-hydrate-vitamins-order-online-near-me-naati-grains-1000x1000.jpg" alt="Jasmine Rice">
+            <div class="product-details">
+                <h2>Idly Rice</h2>
+                <p>A variety specifically used for making idlis, a popular South Indian dish. This rice has a high starch content, which helps in fermenting the idli batter effectively.</p>
+                <button onclick="window.location.href='product4.html'">Product Details</button>
+                <button onclick="window.location.href='buynow4.html'">ADD TO CART</button>
+            </div>
+        </div>
+        <div class="product">
+            <img src="https://img3.21food.com/img/product/2020/11/18/food3052101605652927379623.jpg" alt="Red Rice">
+            <div class="product-details">
+                <h2>Nellore Rice</h2>
+                <p>Originating from the Nellore district, this rice variety is known for its fine grains and superior taste. It's often used for special occasions and traditional dishes.</p>
+                <button onclick="window.location.href='product5.html'">Product Details</button>
+                <button onclick="window.location.href='buynow5.html'">ADD TO CART</button>
+            </div>
+        </div>
+        <div class="product">
+            <img src="https://static.fanpage.it/wp-content/uploads/sites/22/2018/03/black-rice-2.jpg" alt="Millet">
+            <div class="product-details">
+                <h2>Black Rice</h2>
+                <p>This is a less common but highly nutritious variety of rice that is grown in smaller quantities. It is rich in antioxidants and has a unique flavor.</p>
+                <button onclick="window.location.href='product8.html'">Product Details</button>
+                <button onclick="window.location.href='buynow8.html'">ADD TO CART</button>
+            </div>
+        </div>
+       
+    </div>
+    <footer>
+        <p>&copy; 2024 Sri Seetha Rama Paddy Rice Mill. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+
